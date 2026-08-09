@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바이브코딩 프로젝트</title>
+<style>
+  * { box-sizing: border-box; }
+
+  :root {
+    --bg-start: #1e293b;
+    --bg-end: #0f172a;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --title-color: #1e293b;
+    --desc-color: #64748b;
+    --link-bg: #f8fafc;
+    --link-border: #e2e8f0;
+    --link-title: #1e293b;
+    --link-desc: #64748b;
+    --link-hover-border: #2563eb;
+    --toggle-bg: rgba(255, 255, 255, 0.15);
+    --toggle-border: rgba(255, 255, 255, 0.3);
+  }
+
+  html[data-theme="dark"] {
+    --bg-start: #020617;
+    --bg-end: #000000;
+    --card-bg: #1e293b;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --title-color: #f1f5f9;
+    --desc-color: #94a3b8;
+    --link-bg: #0f172a;
+    --link-border: #334155;
+    --link-title: #f1f5f9;
+    --link-desc: #94a3b8;
+    --link-hover-border: #3b82f6;
+    --toggle-bg: rgba(255, 255, 255, 0.08);
+    --toggle-border: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    transition: background 0.3s ease;
+    padding: 24px 0;
+  }
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--toggle-border);
+    background: var(--toggle-bg);
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .theme-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px 32px;
+    width: 90%;
+    max-width: 460px;
+    box-shadow: 0 20px 40px var(--card-shadow);
+    transition: background 0.3s ease;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: var(--title-color);
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  p.desc {
+    margin: 0 0 28px;
+    color: var(--desc-color);
+    font-size: 14px;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  a.link-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--link-bg);
+    border: 1px solid var(--link-border);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.3s ease;
+  }
+  a.link-card:hover { border-color: var(--link-hover-border); }
+  .link-icon { font-size: 28px; }
+  .link-text .link-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--link-title);
+    transition: color 0.3s ease;
+  }
+  .link-text .link-desc {
+    font-size: 13px;
+    color: var(--link-desc);
+    transition: color 0.3s ease;
+  }
+</style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" title="테마 전환">🌙</button>
+  <div class="card">
+    <h1>✨ 바이브코딩 프로젝트</h1>
+    <p class="desc">Claude Code로 만든 프로젝트 모음입니다.</p>
+    <div class="links">
+      <a class="link-card" href="./RandomLotto/">
+        <span class="link-icon">🎱</span>
+        <span class="link-text">
+          <div class="link-title">로또 번호 추천</div>
+          <div class="link-desc">1~45 중 6개의 번호를 무작위로 추천해드려요.</div>
+        </span>
+      </a>
+      <a class="link-card" href="./Contact/">
+        <span class="link-icon">🤝</span>
+        <span class="link-text">
+          <div class="link-title">제휴 문의</div>
+          <div class="link-desc">제휴/협업 관련 문의를 남겨주세요.</div>
+        </span>
+      </a>
+    </div>
+  </div>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+    localStorage.setItem("landing-theme", theme);
+  }
+
+  const savedTheme = localStorage.getItem("landing-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+  themeToggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+</script>
+</body>
+</html>
