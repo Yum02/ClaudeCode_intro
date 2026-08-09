@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Claude Code로 만든 바이브코딩 학습 프로젝트 모음입니다. 로또 번호 추천, 동물상 테스트, 제휴 문의 페이지를 제공합니다.">
 <meta name="google-adsense-account" content="ca-pub-5605699409645651">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5605699409645651" crossorigin="anonymous"></script>
 <title>바이브코딩 프로젝트</title>
@@ -45,13 +46,52 @@
     margin: 0;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
     background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
     font-family: "Segoe UI", "Malgun Gothic", sans-serif;
     transition: background 0.3s ease;
     padding: 24px 0;
   }
+  .about-text {
+    width: 90%;
+    max-width: 460px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 20px 40px var(--card-shadow);
+    transition: background 0.3s ease;
+  }
+  .about-text h2 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: var(--title-color);
+    transition: color 0.3s ease;
+  }
+  .about-text p {
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--desc-color);
+    transition: color 0.3s ease;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .site-footer {
+    width: 90%;
+    max-width: 460px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--desc-color);
+    transition: color 0.3s ease;
+  }
+  .site-footer nav a {
+    color: inherit;
+    text-decoration: underline;
+    margin: 0 6px;
+  }
+  .site-footer p { margin: 8px 0 0; }
   .theme-toggle {
     position: fixed;
     top: 20px;
@@ -151,8 +191,28 @@
           <div class="link-desc">사진을 올리면 AI가 강아지상/고양이상을 알려드려요.</div>
         </span>
       </a>
+      <a class="link-card" href="./About/">
+        <span class="link-icon">📖</span>
+        <span class="link-text">
+          <div class="link-title">사이트 소개</div>
+          <div class="link-desc">이 프로젝트가 무엇인지 자세히 알아보세요.</div>
+        </span>
+      </a>
     </div>
   </div>
+
+  <div class="about-text">
+    <h2>이 사이트는요</h2>
+    <p>바이브코딩 프로젝트는 Claude Code를 활용해 아이디어를 빠르게 실제 웹페이지로 만들어보는 개인 학습 기록입니다. 각 페이지는 하나의 작은 기능에 집중한 미니 웹앱으로, 기획부터 배포까지 전 과정을 직접 진행하며 배운 내용을 담고 있습니다.</p>
+    <p>현재는 무작위 로또 번호를 추천해주는 도구와, 사진을 업로드하면 AI 이미지 인식 모델로 강아지상/고양이상을 판별해주는 동물상 테스트를 제공하고 있으며, 새로운 아이디어가 떠오를 때마다 페이지를 추가해나갈 예정입니다.</p>
+  </div>
+
+  <footer class="site-footer">
+    <nav>
+      <a href="./">홈</a> · <a href="./About/">사이트 소개</a> · <a href="./Privacy/">개인정보처리방침</a> · <a href="./Contact/">제휴 문의</a>
+    </nav>
+    <p>&copy; 2026 바이브코딩 프로젝트</p>
+  </footer>
 
 <script>
   const themeToggle = document.getElementById("themeToggle");

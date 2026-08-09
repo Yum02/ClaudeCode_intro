@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="바이브코딩 프로젝트의 개인정보처리방침입니다. 쿠키 사용, 광고, 제3자 서비스 이용에 대한 안내를 담고 있습니다.">
+<meta name="google-adsense-account" content="ca-pub-5605699409645651">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5605699409645651" crossorigin="anonymous"></script>
+<title>개인정보처리방침</title>
+<style>
+  * { box-sizing: border-box; }
+
+  :root {
+    --bg-start: #1e293b;
+    --bg-end: #0f172a;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --title-color: #1e293b;
+    --desc-color: #64748b;
+    --link-color: #2563eb;
+    --toggle-bg: rgba(255, 255, 255, 0.15);
+    --toggle-border: rgba(255, 255, 255, 0.3);
+  }
+
+  html[data-theme="dark"] {
+    --bg-start: #020617;
+    --bg-end: #000000;
+    --card-bg: #1e293b;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --title-color: #f1f5f9;
+    --desc-color: #94a3b8;
+    --link-color: #60a5fa;
+    --toggle-bg: rgba(255, 255, 255, 0.08);
+    --toggle-border: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    transition: background 0.3s ease;
+    padding: 24px 0;
+  }
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--toggle-border);
+    background: var(--toggle-bg);
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .theme-toggle:hover { background: rgba(255, 255, 255, 0.25); }
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px 32px;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 20px 40px var(--card-shadow);
+    transition: background 0.3s ease;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: var(--title-color);
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  .updated {
+    text-align: center;
+    font-size: 12px;
+    color: var(--desc-color);
+    margin: 0 0 24px;
+    transition: color 0.3s ease;
+  }
+  h2 {
+    margin: 24px 0 8px;
+    font-size: 15px;
+    color: var(--title-color);
+    transition: color 0.3s ease;
+  }
+  h2:first-of-type { margin-top: 0; }
+  p, li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--desc-color);
+    transition: color 0.3s ease;
+  }
+  ul { margin: 8px 0; padding-left: 20px; }
+  a { color: var(--link-color); }
+  .site-footer {
+    width: 90%;
+    max-width: 520px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--desc-color);
+    transition: color 0.3s ease;
+  }
+  .site-footer nav a {
+    color: inherit;
+    text-decoration: underline;
+    margin: 0 6px;
+  }
+  .site-footer p { margin: 8px 0 0; }
+</style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" title="테마 전환">🌙</button>
+  <div class="card">
+    <h1>🔒 개인정보처리방침</h1>
+    <p class="updated">최종 수정일: 2026년 8월 9일</p>
+
+    <h2>1. 수집하는 정보</h2>
+    <p>바이브코딩 프로젝트(이하 "본 사이트")는 별도의 회원가입 없이 이용할 수 있으며, 다음과 같은 경우에 한해 정보를 수집합니다.</p>
+    <ul>
+      <li>제휴 문의 페이지에서 입력한 이름, 이메일, 회사명, 문의 내용은 문의 접수 및 답변 목적으로 Formspree를 통해 전달·저장됩니다.</li>
+      <li>동물상 테스트에 업로드한 사진은 서버로 전송되거나 저장되지 않으며, 브라우저 내에서만 분석에 사용됩니다.</li>
+      <li>댓글 기능(Disqus)을 이용하실 경우 Disqus의 자체 개인정보처리방침에 따라 정보가 수집될 수 있습니다.</li>
+    </ul>
+
+    <h2>2. 쿠키 및 광고</h2>
+    <p>본 사이트는 Google AdSense를 통해 광고를 게재하며, Google 및 제휴 광고사가 사용자의 관심사에 기반한 광고를 제공하기 위해 쿠키를 사용할 수 있습니다. Google이 광고 쿠키를 사용하는 방식에 대한 자세한 내용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 정책 페이지</a>에서 확인하실 수 있습니다.</p>
+    <p>맞춤 광고를 원하지 않으시는 경우 <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google 광고 설정</a>에서 개인 맞춤 광고를 비활성화할 수 있습니다.</p>
+
+    <h2>3. 제3자 서비스</h2>
+    <p>본 사이트는 다음과 같은 제3자 서비스를 이용하고 있으며, 각 서비스는 자체 개인정보처리방침을 따릅니다.</p>
+    <ul>
+      <li>Cloudflare Pages (호스팅)</li>
+      <li>Google AdSense (광고)</li>
+      <li>Disqus (댓글)</li>
+      <li>Formspree (문의 폼 전송)</li>
+      <li>Google Teachable Machine (이미지 인식 모델)</li>
+    </ul>
+
+    <h2>4. 문의</h2>
+    <p>개인정보처리방침과 관련한 문의사항은 <a href="../Contact/">제휴 문의 페이지</a>를 통해 남겨주시면 확인 후 답변드리겠습니다.</p>
+  </div>
+
+  <footer class="site-footer">
+    <nav>
+      <a href="../">홈</a> · <a href="../About/">사이트 소개</a> · <a href="../Contact/">제휴 문의</a>
+    </nav>
+    <p>&copy; 2026 바이브코딩 프로젝트</p>
+  </footer>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+    localStorage.setItem("privacy-theme", theme);
+  }
+
+  const savedTheme = localStorage.getItem("privacy-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+  themeToggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+</script>
+</body>
+</html>
