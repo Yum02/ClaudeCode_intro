@@ -1,5 +1,6 @@
 # ClaudeCode_intro
 
+
 Claude Code를 활용한 바이브코딩(Vibe Coding) 학습 기록 저장소입니다.
 직접 프로젝트를 만들어보며 익힌 내용, 시행착오, 배운 점을 정리합니다.
 
