@@ -39,10 +39,22 @@
     margin: 0;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 32px;
     background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
     font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    transition: background 0.3s ease;
+    padding: 24px 0;
+  }
+  .comments {
+    width: 90%;
+    max-width: 420px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 40px var(--card-shadow);
     transition: background 0.3s ease;
   }
   .theme-toggle {
@@ -134,6 +146,11 @@
     <button id="generateBtn">번호 추천받기</button>
   </div>
 
+  <div class="comments">
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+
 <script>
   function ballColor(n) {
     if (n <= 10) return "#fbc400";
@@ -190,6 +207,19 @@
     const current = root.getAttribute("data-theme");
     applyTheme(current === "dark" ? "light" : "dark");
   });
+</script>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = "randomlotto";
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://yum02.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 </script>
 </body>
 </html>
