@@ -27,3 +27,8 @@ Claude Code를 활용한 바이브코딩(Vibe Coding) 학습 기록 저장소입
 - 시도한 것: 저장소 생성, README 작성, CLAUDE.md 작성, `examples/` 폴더에 정리 연습용 파일 14개(보고서·스프레드시트·프레젠테이션·이미지 등) 생성 후 종류별로 `images/`, `documents/`, `spreadsheets/`, `presentations/` 폴더로 분류 정리
 - 배운 점 / 느낀 점: Claude Code에게 자연어로 정리 기준(종류별 폴더명)을 지정하면 파일 분류와 이동을 한 번에 처리해줌
 - 다음에 해볼 것: 이름이 모호한 파일(Untitled.txt 등) 정리 기준 세분화, 다른 정리 시나리오(중복 파일, 날짜별 정리 등) 연습
+
+### 2026-08-09 - 실제 웹사이트 기획부터 배포까지
+- 시도한 것: 로또 번호 추천 페이지(RandomLotto) 제작 및 다크/화이트 모드 토글 구현, Cloudflare Pages + GitHub 연동 배포 및 Build output directory 설정 문제 트러블슈팅, Formspree 연동 제휴 문의 폼(Contact) 제작, 여러 페이지를 안내하는 랜딩 페이지 제작, Disqus 댓글 기능 추가, Teachable Machine 이미지 모델을 활용한 동물상 테스트(AnimalTest) 페이지 제작, Google AdSense 스크립트/메타태그 및 ads.txt 추가, AdSense 심사 통과를 위한 사이트 품질 개선(소개 페이지, 개인정보처리방침 페이지, 공통 푸터 내비게이션, 설명 콘텐츠 보강, robots.txt, sitemap.xml 추가)
+- 배운 점 / 느낀 점: Cloudflare Pages는 Build output directory 설정에 따라 정적 사이트의 어느 폴더를 서빙할지 결정되며, 여러 하위 프로젝트를 한 저장소에 둘 때는 공통 상위 폴더를 output directory로 지정해야 각 하위 경로(/RandomLotto/, /Contact/ 등)가 모두 접근 가능해짐. 재배포(Retry deployment)가 최신 설정을 반영하지 못할 때는 새 커밋을 push해 완전히 새 빌드를 트리거하는 것이 확실함. AdSense 승인을 노릴 때는 도구 자체 기능뿐 아니라 개인정보처리방침, 사이트 소개, 충분한 설명 텍스트, 내비게이션 구조 같은 "사이트 완성도" 요소가 함께 필요함
+- 다음에 해볼 것: 커스텀 도메인 연결, AdSense 실제 심사 결과 확인 후 필요시 콘텐츠 추가 보완, 다른 아이디어로 새 미니 웹앱 페이지 추가
