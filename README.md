@@ -4,6 +4,10 @@
 Claude Code를 활용한 바이브코딩(Vibe Coding) 학습 기록 저장소입니다.
 직접 프로젝트를 만들어보며 익힌 내용, 시행착오, 배운 점을 정리합니다.
 
+조코딩 유튜브를 통해 학습하며, 실습을 하는 것을 정리합니다.
+해당 유튜브 링크 : 
+https://www.youtube.com/watch?v=P3jFI-VpyLg&t=4472s
+
 ## 목적
 
 - Claude Code의 기능과 사용법을 실습하며 익히기
