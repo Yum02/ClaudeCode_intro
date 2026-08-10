@@ -37,7 +37,7 @@ https://www.youtube.com/watch?v=P3jFI-VpyLg&t=4472s
 - 배운 점 / 느낀 점: Cloudflare Pages는 Build output directory 설정에 따라 정적 사이트의 어느 폴더를 서빙할지 결정되며, 여러 하위 프로젝트를 한 저장소에 둘 때는 공통 상위 폴더를 output directory로 지정해야 각 하위 경로(/RandomLotto/, /Contact/ 등)가 모두 접근 가능해짐. 재배포(Retry deployment)가 최신 설정을 반영하지 못할 때는 새 커밋을 push해 완전히 새 빌드를 트리거하는 것이 확실함. AdSense 승인을 노릴 때는 도구 자체 기능뿐 아니라 개인정보처리방침, 사이트 소개, 충분한 설명 텍스트, 내비게이션 구조 같은 "사이트 완성도" 요소가 함께 필요함
 - 다음에 해볼 것: 커스텀 도메인 연결, AdSense 실제 심사 결과 확인 후 필요시 콘텐츠 추가 보완, 다른 아이디어로 새 미니 웹앱 페이지 추가
 
-### 2026-08-10 - 구글 태그(gtag.js) 추가 및 배포 확인
-- 시도한 것: Google 태그(gtag.js, Google Analytics) 스크립트를 사이트의 모든 페이지(index, About, Contact, Privacy, AnimalTest, RandomLotto) `<head>` 바로 아래에 추가하고 GitHub에 커밋/푸시. 이후 실제 배포된 사이트(claudecode-intro.pages.dev)에 태그가 반영됐는지 curl로 raw HTML을 확인
-- 배운 점 / 느낀 점: GitHub에 푸시가 성공해도 Cloudflare Pages 빌드가 실패하면 실제 서비스 중인 사이트에는 반영되지 않음. WebFetch처럼 HTML을 마크다운으로 변환하는 도구는 `<script>` 태그가 걸러질 수 있어 확인용으로 부적합하고, curl로 raw HTML을 직접 받아 태그 유무를 확인하는 게 정확함
-- 다음에 해볼 것: Cloudflare Pages 대시보드에서 실패한 배포의 빌드 로그를 확인해 오류 원인 파악 후 재배포, 배포 성공 후 실제 사이트에서 gtag가 정상 동작하는지(Google Analytics 실시간 리포트 등으로) 재확인
+### 2026-08-10 - 구글 태그(gtag.js) / MS Clarity 추가 및 배포 트러블슈팅
+- 시도한 것: Google 태그(gtag.js, Google Analytics) 스크립트를 사이트의 모든 페이지(index, About, Contact, Privacy, AnimalTest, RandomLotto) `<head>`에 추가하고 커밋/푸시. curl로 raw HTML을 확인해보니 실제 배포 사이트에는 미반영 상태였고, 원인은 Cloudflare Pages의 GitHub 연동이 끊긴 것이었음(사용자가 재연결). 재연결 후에도 과거 push분이 자동 반영되지 않아 빈 커밋(`git commit --allow-empty`)을 push해 새 빌드를 강제로 트리거했고, Monitor 도구로 배포 완료(gtag 반영)를 자동 확인함. 이어서 Microsoft Clarity 추적 코드도 동일한 6개 페이지 `<head>`에 추가
+- 배운 점 / 느낀 점: GitHub 연동이 끊긴 상태에서 push해도 Git 자체는 성공하지만 Cloudflare Pages 빌드는 트리거되지 않음. 연동을 복구해도 끊긴 동안의 과거 push는 자동으로 재배포되지 않을 수 있어, 빈 커밋으로 새 push 이벤트를 만들어 webhook을 다시 발동시키는 방법이 확실함. 배포 확인은 curl로 raw HTML의 태그 유무를 직접 검사하는 것이 정확하고, Monitor 도구로 배포 완료를 폴링해두면 기다리는 동안 다른 작업을 계속할 수 있음
+- 다음에 해볼 것: Cloudflare 대시보드에서 GitHub 연동이 다시 끊기지 않는지 주기적으로 확인, Microsoft Clarity 실제 히트맵/세션 리플레이 데이터 확인, 커스텀 도메인 연결
