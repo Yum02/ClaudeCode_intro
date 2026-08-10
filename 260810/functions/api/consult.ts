@@ -20,13 +20,13 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const imageBytes = [...new Uint8Array(await photo.arrayBuffer())]
   const prompt = `${PROMPT_PREFIX}\n\n키: ${height}cm, 몸무게: ${weight}kg`
 
-  const result = await env.AI.run('@cf/meta/llama-3.2-11b-vision-instruct', {
+  const result = await env.AI.run('@cf/llava-hf/llava-1.5-7b-hf', {
     image: imageBytes,
     prompt,
     max_tokens: 1024,
   })
 
-  const report = 'response' in result ? result.response : undefined
+  const report = 'description' in result ? result.description : undefined
 
   if (!report) {
     return jsonResponse({ error: '보고서를 생성하지 못했습니다.' }, 502)
